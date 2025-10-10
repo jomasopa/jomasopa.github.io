@@ -8,8 +8,20 @@
     <style>body { background-image: url('assets/images/principal-bg.png'), url('assets/images/textura-ruido.png'); }</style>
 </head>
 <body class="bg-fixed">
-    <audio autoplay loop><source src="assets/audio/hell.mp3" type="audio/mpeg"></audio>
-    <div class="page-container">
+
+    <div id="loading-overlay">
+        <div id="loading-box">
+            <h2>TEM CRTZ?</h2>
+            <div id="loading-buttons">
+                <a href="#" id="start-button">INICIAR</a>
+                <a href="index.html" class="splash-button">NÃO</a>
+            </div>
+        </div>
+    </div>
+
+    <audio id="background-music" loop><source src="assets/audio/hell.mp3" type="audio/mpeg"></audio>
+
+    <div class="page-container" style="visibility: hidden;">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
             <div class="fita-canto-sd"></div>
@@ -42,5 +54,31 @@
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        const startButton = document.getElementById('start-button');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const backgroundMusic = document.getElementById('background-music');
+        const pageContainer = document.querySelector('.page-container');
+
+        startButton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // 1. Toca a música
+            backgroundMusic.play();
+
+            // 2. Some com a camada de carregamento
+            loadingOverlay.style.opacity = '0';
+            
+            // 3. Mostra o conteúdo principal
+            pageContainer.style.visibility = 'visible';
+
+            // 4. Remove completamente a camada depois da animação
+            setTimeout(function() {
+                loadingOverlay.style.display = 'none';
+            }, 500); // 0.5s, mesmo tempo da transição no CSS
+        });
+    </script>
+
 </body>
 </html>
