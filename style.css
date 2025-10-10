@@ -1,0 +1,206 @@
+/* ==============================================
+   ESTÉTICA FINAL: ALERTA VERMELHO
+   ============================================== */
+   :root {
+    --cor-fundo: #110a0a; /* Um preto avermelhado profundo */
+    --cor-principal: #ff2c2c; /* Vermelho vibrante principal */
+    --cor-secundaria: #a81c1c; /* Vermelho escuro para detalhes */
+    --cor-texto: #e6d9d9; /* Branco levemente rosado */
+    --cor-sombra-brilho: rgba(255, 44, 44, 0.5); /* Brilho vermelho */
+    --cursor-default: url('assets/images/mouse1.png'), auto;
+    --cursor-pointer: url('assets/images/mouse2.png'), pointer;
+}
+
+@font-face {
+    font-family: 'SAIBA-45';
+    src: url('assets/fonts/SAIBA-45.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SpookyPunk';
+    src: url('assets/fonts/SpookyPunk.ttf') format('truetype');
+}
+
+/* ==============================================
+   ESTILOS GERAIS E LAYOUT
+   ============================================== */
+html, body {
+    cursor: var(--cursor-default);
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'SpookyPunk', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    background-image: url('assets/images/textura-ruido.png');
+}
+::selection { background-color: var(--cor-principal); color: var(--cor-fundo); }
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--cor-fundo); }
+::-webkit-scrollbar-thumb { background: var(--cor-principal); }
+a, button, .nav-button { cursor: var(--cursor-pointer) !important; }
+
+.bg-fixed {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.bg-jogos {
+    background-position: center bottom;
+}
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* ==============================================
+   CAIXA DE CONTEÚDO ESTILO TERMINAL
+   ============================================== */
+.main-box-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    flex-shrink: 0;
+}
+
+.main-box {
+    background-color: rgba(15, 10, 10, 0.9);
+    box-shadow: 0 0 25px var(--cor-sombra-brilho), inset 0 0 15px rgba(0,0,0,0.7);
+    border: 2px solid var(--cor-secundaria);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh;
+    max-height: 85vh;
+}
+.main-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.3) 50%, transparent 50%);
+    background-size: 100% 4px;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+}
+.main-box > * { position: relative; z-index: 2; }
+
+.box-header, .box-footer {
+    padding: 10px 20px;
+    background-color: rgba(10, 5, 5, 0.7);
+    flex-shrink: 0;
+    font-family: 'SAIBA-45', sans-serif;
+}
+
+.box-header {
+    border-bottom: 1px solid var(--cor-secundaria);
+    text-align: left;
+    font-size: 1.2em;
+    color: var(--cor-principal);
+}
+
+.box-body {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    position: relative;
+}
+
+.box-footer {
+    border-top: 1px solid var(--cor-secundaria);
+    text-align: right;
+    font-size: 1em;
+    color: var(--cor-secundaria);
+}
+
+/* FITAS QUE SEGURAM A CAIXA */
+.fita-canto-se, .fita-canto-sd, .fita-canto-ie, .fita-canto-id {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('assets/images/fita-tape.png');
+    background-size: cover;
+    z-index: 11;
+    opacity: 0.7;
+    filter: sepia(100%) hue-rotate(330deg) saturate(4); /* Deixa a fita avermelhada */
+}
+.fita-canto-se { top: -35px; left: -35px; transform: rotate(-45deg); }
+.fita-canto-sd { top: -35px; right: -35px; transform: rotate(45deg); }
+.fita-canto-ie { bottom: -35px; left: -35px; transform: rotate(45deg); }
+.fita-canto-id { bottom: -35px; right: -35px; transform: rotate(-45deg); }
+
+
+/* ==============================================
+   NAVEGAÇÃO E CONTEÚDO INTERNO
+   ============================================== */
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--cor-secundaria);
+    margin-bottom: 20px;
+}
+.nav-button {
+    background-color: transparent;
+    color: var(--cor-principal);
+    font-family: 'SAIBA-45', sans-serif;
+    font-size: 1.8em;
+    text-decoration: none;
+    padding: 15px;
+    border: 1px solid var(--cor-principal);
+    transition: all 0.2s ease-in-out;
+}
+.nav-button:hover {
+    background-color: var(--cor-principal);
+    color: var(--cor-fundo);
+    box-shadow: 0 0 15px var(--cor-sombra-brilho);
+}
+.texto-principal {
+    font-size: 1.2em;
+    line-height: 1.7;
+    text-align: left;
+    color: var(--cor-texto);
+}
+.texto-principal h1, .texto-principal h2 {
+    font-family: 'SAIBA-45', sans-serif;
+    color: var(--cor-principal);
+    text-align: center;
+    font-size: 2.2em;
+    text-shadow: 0 0 10px var(--cor-sombra-brilho);
+}
+.texto-principal a {
+    color: var(--cor-principal);
+    font-weight: bold;
+    text-decoration: none;
+}
+.texto-principal a:hover { text-decoration: underline; }
+.img-post { width: 100%; max-width: 500px; display: block; margin: 20px auto; border: 1px solid var(--cor-secundaria); }
+
+/* CLASSES PARA MARCAR TEXTO */
+.mark-red { color: var(--cor-principal); font-weight: bold; }
+.mark-yellow { color: #ffee75; }
+.mark-blue { color: #82aaff; }
+.highlight-bg { background-color: var(--cor-secundaria); padding: 0 5px; }
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-family: 'SAIBA-45', sans-serif;
+    font-size: 1.2em;
+    color: #555;
+    flex-shrink: 0;
+}
