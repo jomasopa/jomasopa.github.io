@@ -242,3 +242,11 @@ footer {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px #111;
 }
+/* bloco css */
+.separador-blog {
+    border: none; 
+    border-top: 2px solid #333333; 
+    width: 60%; 
+    margin: 3em auto; 
+    opacity: 0.5; 
+}
