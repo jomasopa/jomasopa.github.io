@@ -7,21 +7,10 @@
     <link rel="stylesheet" href="../style.css">
     <style>
         body { background-image: url('../assets/images/lombr.png'), url('../assets/images/textura-ruido.png'); }
-        .audio-player-box {
-            background-color: #991313; 
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px; 
-            text-align: center;
-        }
-        .audio-player-box audio {
-            width: 100%;
-            max-width: 300px; 
-            margin-top: 5px;
-        }
     </style>
 </head>
-<body class="bg-fixed">
+<body class="bg-fixed cat-sistema">
+    <div id="vinheta-profundidade"></div>
     <div class="page-container">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
@@ -29,33 +18,35 @@
             <div class="fita-canto-ie"></div>
             <div class="fita-canto-id"></div>
             <div class="main-box">
-                <header class="box-header"><h1>Proteínas de Choque Térmico 40 (HSP40)</h1></header>
+                <header class="box-header">
+                    <span class="eyebrow">CORPO // SISTEMA</span>
+                    <h1>Proteínas de Choque Térmico 40 (HSP40)</h1>
+                </header>
                 <main class="box-body">
-                    <nav class="nav-grid"><a href="./index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
-
+                    <nav class="nav-grid"><a href="index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
                     <div class="audio-player-box">
-                        <p style="color: rgb(2, 2, 2); margin-bottom: 5px;">Darkness - Sweet Trip</p>
+                        <p>Darkness — Sweet Trip</p>
                         <audio controls><source src="../assets/audio/Darkness.mp3" type="audio/mpeg"></audio>
                     </div>
 
-                     <article class="texto-principal">
-                        <img src="../../assets/images/Jproteins.png" alt="dominio protéico J" class="img-post">
+                    <article class="texto-principal">
+                        <img src="../assets/images/Jproteins.png" alt="dominio protéico J" class="img-post">
                         <p>Frio intenso, reciclagem imprecisa do dinamismo da energia cinética.</p>
                         <p>Achei que funcionava como uma ímã, mas percebo que na verdade somos intrinsecamente desordenados, ou seja, nossa estrutura desenovelada assume a menor variação de energia livre possível.</p>
                         <p>Cansei de processos não espontâneos, cansei de gastar energia acoplando reações.</p>
                         <p>Vias metabólicas infuncionais, não por algo anulativo, mas por gerarem produtos incapazes de reagirem posteriormente.</p>
-                        <p>Espero o <span class="mark-red">seu</span> acoplamento enzimático, mas vejo que sua estrutura proteica não é capaz de alocar meus sinalizadores. </p>   
+                        <p>Espero o <span class="mark-red">seu</span> acoplamento enzimático, mas vejo que sua estrutura proteica não é capaz de alocar meus sinalizadores.</p>
                         <p>Como proteina de membrana é fácil esquecer o que nunca se ligou.</p>
                         <p>Dificil é ser o transmissor fabricado para tentar <span class="highlight-bg">erroneamente</span> durante toda sua existencia, uma ligação impossível.</p>
-                        <p>Reciclagem imprecisa do dinamismo da energia cinética, movimento que atrasa e decai antes de tempo. Achei que a sua posição cirúrgica ia ser um boost para um metabolismo funcional. </p>
+                        <p>Reciclagem imprecisa do dinamismo da energia cinética, movimento que atrasa e decai antes de tempo. Achei que a sua posição cirúrgica ia ser um boost para um metabolismo funcional.</p>
                         <p>Me engano, ao pensar que uma posição cirúrgica é uma posição funcional.</p>
                         <p>Lembro que sou <span class="mark-red">maquina</span> também. Capaz de metabolizar e oxidar reações.</p>
-                        <p> Produto no qual o gasto entropico era tão alto (diminuição no numero de conformações possíveis) <span class="highlight-bg">Deixa de ser necessário.</span></p>
+                        <p>Produto no qual o gasto entropico era tão alto (diminuição no numero de conformações possíveis) <span class="highlight-bg">Deixa de ser necessário.</span></p>
                         <p>O tempo inerte, faz com que tudo entre em equilíbrio, e cada reação seja precisa e dinâmica.</p>
-                        <p>Minha ginga aproveita da <span class="mark-red">inercia</span>, faz com que toda a energia potencial vire energia cinética, isolando de forma adiabática <span class="highlight-bg">meu</span>sistema.</p>
-                        <p> movimento é cura,  movimento é equilibrio,  movimento me empurra longe de você.</p>
+                        <p>Minha ginga aproveita da <span class="mark-red">inercia</span>, faz com que toda a energia potencial vire energia cinética, isolando de forma adiabática <span class="highlight-bg">meu</span> sistema.</p>
+                        <p>movimento é cura, movimento é equilibrio, movimento me empurra longe de você.</p>
                         <p>O Frio intenso já não me pertuba. Pelo potencial de Lennard-Jones.</p>
-                        <p>O Dinasmimo não existe mais. Agora só existe o meu sistema <span class="highlight-bg">fechado</span> </p>
+                        <p>O Dinasmimo não existe mais. Agora só existe o meu sistema <span class="highlight-bg">fechado</span></p>
                     </article>
                 </main>
                 <footer class="box-footer"><p>ENTRY_FAILED::dominio_J.log</p></footer>
@@ -63,5 +54,13 @@
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        setTimeout(function () { document.body.classList.add('deep'); }, 20000);
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>

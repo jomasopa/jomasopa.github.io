@@ -3,47 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOMASOPA - Lombras</title>
+    <title>JOMASOPA — Lombras</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        body { 
-            background-image: url('../assets/images/deathcore.jpeg'); 
-        }
-        
-        /* Estrutura de organização dos posts em colunas */
-        .menu-lombras {
-            width: 100%;
-            margin-top: 25px;
-            border-collapse: collapse;
-        }
-        .menu-lombras th {
-            text-align: left;
-            padding-bottom: 10px;
-            font-size: 1.1em;
-            color: #991313;
-            border-bottom: 1px dashed #991313;
-            letter-spacing: 1px;
-        }
-        .menu-lombras td {
-            width: 50%;
-            padding: 8px 12px 8px 0;
-            vertical-align: top;
-        }
-        .post-link {
-            display: block;
-            margin: 4px 0;
-            text-decoration: none;
-        }
-        .post-link span {
-            transition: opacity 0.2s;
-        }
-        .post-link:hover span {
-            text-decoration: underline;
-        }
+        body { background-image: url('../assets/images/deathcore.jpeg'); }
     </style>
 </head>
 <body class="bg-fixed">
-    <audio autoplay loop><source src="../../assets/audio/brahms.mp3" type="audio/mpeg"></audio>
+    <audio autoplay loop><source src="../assets/audio/brahms.mp3" type="audio/mpeg"></audio>
+    <div id="vinheta-profundidade"></div>
     <div class="page-container">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
@@ -51,42 +19,51 @@
             <div class="fita-canto-ie"></div>
             <div class="fita-canto-id"></div>
             <div class="main-box">
-                <header class="box-header"><p>//: JOMASOPA/LOMBRAS</p></header>
+                <header class="box-header">
+                    <span class="eyebrow">//: JOMASOPA/LOMBRAS</span>
+                    <h1>lombras</h1>
+                </header>
                 <main class="box-body">
                     <nav class="nav-grid"><a href="../home.html" class="nav-button"><span>INÍCIO</span></a></nav>
                     <article class="texto-principal">
-                        <h1>LOMBRAS</h1>
-                        <p>Coisas que converso, penso e revisito. Investigações teóricas, filosofias, perceptions e fragmentos poéticos que merecem registro e memória.</p>
-                        
-                        <table class="menu-lombras">
-                            <thead>
-                                <tr>
-                                    <th>[Ensaios & Sistemas]</th>
-                                    <th>[Poéticas & Vertigens]</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="./genomica.html" class="post-link">➔ <span>Genômica</span></a>
-                                        <a href="./Jproteins.html" class="post-link">➔ <span>Chaperone DnaJ</span></a>
-                                        <a href="./pior-trabalho-e-o-divino.html" class="post-link">➔ <span>Pior trabalho é o divino?</span></a>
-                                        <a href="./momentum.html" class="post-link">➔ <span>Momentum</span></a>
-                                        <a href="./01.html" class="post-link">➔ <span>01's</span></a>
-                                        <a href="./Correnteza.html" class="post-link">➔ <span>Correnteza</span></a>
-                                    </td>
-                                    <td>
-                                        <a href="./abismo.html" class="post-link">➔ <span>Abismo de cores</span></a>
-                                        <a href="./odio.html" class="post-link">➔ <span>Odio meu</span></a>
-                                        <a href="./s.html" class="post-link">➔ <span>Ési</span></a>
-                                        <a href="./nexisto.html" class="post-link">➔ <span>Não existo</span></a>
-                                        <a href="./persona.html" class="post-link">➔ <span>Persona</span></a>
-                                        <a href="./refugio.html" class="post-link">➔ <span>Refugio fraseal</span></a>
-                                        <a href="./TEVEJO.html" class="post-link">➔ <span>Te vejo</span></a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <p>Separados por aquilo que os motiva.</p>
+
+                        <div class="nucleos">
+                            <div class="nucleo n-sistema">
+                                <h2>Corpo // Sistema</h2>
+                                <p class="descricao-nucleo">Há momentos em que o corpo é uma fortaleza onde a alma se vê sitiada por suas próprias fraquezas</p>
+                                <ul class="lista-poemas">
+                                    <li><a href="genomica.html">Genômica</a></li>
+                                    <li><a href="Jproteins.html">Chaperone DnaJ</a></li>
+                                    <li><a href="ProteinasBlaBlaBla.html">Nucleoporinas</a></li>
+                                    <li><a href="momentum.html">Momentum</a></li>
+                                    <li><a href="01.html">01's</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="nucleo n-ruina">
+                                <h2>Ruína</h2>
+                                <p class="descricao-nucleo"> o vazio resultante depois que a estrutura cede.</p>
+                                <ul class="lista-poemas">
+                                    <li><a href="odio.html">Ódio meu</a></li>
+                                    <li><a href="nexisto.html">Não existo</a></li>
+                                    <li><a href="persona.html">Persona</a></li>
+                                    <li><a href="refugio.html">Refúgio fraseal</a></li>
+                                    <li><a href="s.html">Ési</a></li>
+                                    <li><a href="abismo.html">Abismo de cores</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="nucleo n-ternura">
+                                <h2>Ternura // Fé</h2>
+                                <p class="descricao-nucleo">os poucos respiros</p>
+                                <ul class="lista-poemas">
+                                    <li><a href="Correnteza.html">Mudança de maré</a></li>
+                                    <li><a href="TEVEJO.html">Te vejo</a></li>
+                                    <li><a href="pior-trabalho-e-o-divino.html">Pior trabalho é o divino?</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </article>
                 </main>
                 <footer class="box-footer"><p>SYSTEM_LOG::ROOT/LOMBRAS/</p></footer>
@@ -94,5 +71,13 @@
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        setTimeout(function () { document.body.classList.add('deep'); }, 25000);
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>

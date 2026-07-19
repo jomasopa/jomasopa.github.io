@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pior trabalho é o divino?</title>
     <link rel="stylesheet" href="../style.css">
-    <style>body { background-image: url('../assets/images/deus.jpg'), url('../assets/images/textura-ruido.png'); }</style>
+    <style>
+        body { background-image: url('../assets/images/deus.jpg'), url('../assets/images/textura-ruido.png'); }
+    </style>
 </head>
-<body class="bg-fixed">
-    <audio autoplay loop><source src="../assets/audio/brahms1.mp3" type="audio/mpeg"></audio>
+<body class="bg-fixed cat-ternura">
+    <div id="vinheta-profundidade"></div>
     <div class="page-container">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
@@ -16,13 +18,21 @@
             <div class="fita-canto-ie"></div>
             <div class="fita-canto-id"></div>
             <div class="main-box">
-                <header class="box-header"><h1>Pior trabalho é o divino?</h1></header>
+                <header class="box-header">
+                    <span class="eyebrow">TERNURA // FÉ</span>
+                    <h1>Pior trabalho é o divino?</h1>
+                </header>
                 <main class="box-body">
-                    <nav class="nav-grid"><a href="./index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
+                    <nav class="nav-grid"><a href="index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
+                    <div class="audio-player-box">
+                        <p>Brahms — trilha de fundo</p>
+                        <audio controls><source src="../assets/audio/brahms1.mp3" type="audio/mpeg"></audio>
+                    </div>
+
                     <article class="texto-principal">
                         <p>Eu, kat e Lucas hills, estavamos assistindo "Inuyashiki", quando comentamos sobre o papel do herói, o anime cria essa atmosfera dual entre o bem e o mal, como coisas mínimas podem ser importantes. Mas, principalmente como pessoas que não tem nada, se não uma vida mediocre podem ser boas, enquanto, pessoas que tem tudo podem ser mesquinhas e egoístas.</p>
                         <p>Nessa atmosfera, comentamos sobre o papel de Deus,</p>
-                        <p>-"Deus precisa ser o herói? será que não cansa ser o único capaz de lidar com essas problematicas divinas, será que Deus não prefere ser sei lá, um escritor...."<p>
+                        <p>-"Deus precisa ser o herói? será que não cansa ser o único capaz de lidar com essas problematicas divinas, será que Deus não prefere ser sei lá, um escritor...."</p>
                         <p>Quando eu comentei isso, Kat deu corda e começamos a destrinchar um pouco esse pensamento, confesso que tenho pensado sobre isso ultimamente. Talvez Deus não nos abandonou, só nos esqueceu... estamos guardados no armario dele, enquanto ele cuida de outros compromissos.</p>
                         <p>Talvez, seja isso... As vezes o herói só cansou... imagino o peso de uma responsabilidade eterna, também penso em não ser tão egoísta a ponto de imaginar que no final das contas essa história seja sobre a humanidade... Logo sobre essa humanidade desunida e quebrada. Mas ao mesmo tempo, vejo os detalhes de uma obra divina, como se fosse uma assinatura em um quadro, vestigios de divindade....</p>
                         <p>(COMO A PORRA DA PROTEINA ENOVELA ASSUMINDO A MENOR VARIAÇÃO DE ENERGIA POSSIVEL)</p>
@@ -36,5 +46,13 @@
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        setTimeout(function () { document.body.classList.add('deep'); }, 20000);
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>

@@ -28,10 +28,13 @@
             <div class="fita-canto-ie"></div>
             <div class="fita-canto-id"></div>
             <div class="main-box">
-                <header class="box-header"><p>//: JOMASOPA_v1.0 [STATUS: ONLINE]</p></header>
+                <header class="box-header">
+                    <span class="eyebrow">//: JOMASOPA_v2.0 [STATUS: ONLINE]</span>
+                    <h1>diário</h1>
+                </header>
                 <main class="box-body">
                     <div class="nav-grid">
-                        <a href="lombras/index.html" class="nav-button"><span>EROSÃO</span></a>
+                        <a href="lombras/index.html" class="nav-button"><span>LOMBRAS</span></a>
                     </div>
                     <article class="texto-principal">
                         <p>Oi amigo, se você está aqui imagino que você seja uma pessoa próxima de mim. Então... descobri que <span class="mark-yellow">escrever ajuda a aliviar minha ansiedade</span>, não só por não ficar pensando sobre isso e me perdendo, mas por que é bom discorrer sobre as coisas e dar o <span class="mark-red">enterro necessário</span> para elas.</p>
@@ -60,20 +63,12 @@
 
         startButton.addEventListener('click', function(event) {
             event.preventDefault();
-
-            // 1. Toca a música
             backgroundMusic.play();
-
-            // 2. Some com a camada de carregamento
             loadingOverlay.style.opacity = '0';
-            
-            // 3. Mostra o conteúdo principal
             pageContainer.style.visibility = 'visible';
-
-            // 4. Remove completamente a camada depois da animação
             setTimeout(function() {
                 loadingOverlay.style.display = 'none';
-            }, 500); // 0.5s, mesmo tempo da transição no CSS
+            }, 500);
         });
     </script>
 

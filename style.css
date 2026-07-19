@@ -1,252 +1,236 @@
 /* ==============================================
-   ESTÉTICA FINAL: ALERTA VERMELHO
+   JOMASOPA — SISTEMA DE DESIGN
+   concreto cru, zine rasgado, log de sistema.
    ============================================== */
-   :root {
-    --cor-fundo: #110a0a;
-    --cor-principal: #ff2c2c;
-    --cor-secundaria: #a81c1c;
-    --cor-texto: #e6d9d9;
-    --cor-sombra-brilho: rgba(255, 44, 44, 0.5);
+:root {
+    --cor-fundo: #0b0a08;
+    --cor-fundo-alt: #151210;
+    --cor-texto: #d9d3c5;
+    --cor-texto-dim: #8f8879;
+    --cor-cimento: #3a352e;
+    --cor-cimento-claro: #57503f;
+
+    /* acentos por núcleo temático — mesma família, calor diferente */
+    --cor-ferrugem: #b1401f;   /* RUÍNA */
+    --cor-oxido: #62703f;      /* CORPO/SISTEMA */
+    --cor-dourado: #a6873f;    /* TERNURA/FÉ */
+    --cor-accent: var(--cor-ferrugem);
+    --cor-accent-fraca: rgba(177, 64, 31, 0.35);
+
     --cursor-default: url('assets/images/mouse1.png'), auto;
     --cursor-pointer: url('assets/images/mouse2.png'), pointer;
 }
 
-@font-face {
-    font-family: 'SAIBA-45';
-    src: url('assets/fonts/SAIBA-45.ttf') format('truetype');
-}
+body.cat-sistema { --cor-accent: var(--cor-oxido); --cor-accent-fraca: rgba(98, 112, 63, 0.35); }
+body.cat-ruina   { --cor-accent: var(--cor-ferrugem); --cor-accent-fraca: rgba(177, 64, 31, 0.35); }
+body.cat-ternura { --cor-accent: var(--cor-dourado); --cor-accent-fraca: rgba(166, 135, 63, 0.35); }
 
-@font-face {
-    font-family: 'SpookyPunk';
-    src: url('assets/fonts/SpookyPunk.ttf') format('truetype');
-}
+@font-face { font-family: 'SAIBA-45'; src: url('assets/fonts/SAIBA-45.ttf') format('truetype'); }
+@font-face { font-family: 'SpookyPunk'; src: url('assets/fonts/SpookyPunk.ttf') format('truetype'); }
+@font-face { font-family: 'Ticking'; src: url('assets/fonts/Ticking.ttf') format('truetype'); }
 
 /* ==============================================
-   ESTILOS GERAIS E LAYOUT
+   BASE
    ============================================== */
-html, body {
-    cursor: var(--cursor-default);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-}
+html, body { cursor: var(--cursor-default); margin: 0; padding: 0; width: 100%; min-height: 100%; }
 body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    font-family: 'SpookyPunk', sans-serif;
+    font-family: 'Courier New', ui-monospace, monospace;
     text-align: center;
     overflow-x: hidden;
     background-image: url('assets/images/textura-ruido.png');
+    position: relative;
 }
-::selection { background-color: var(--cor-principal); color: var(--cor-fundo); }
-::-webkit-scrollbar { width: 12px; }
+::selection { background-color: var(--cor-accent); color: var(--cor-fundo); }
+::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--cor-fundo); }
-::-webkit-scrollbar-thumb { background: var(--cor-principal); }
+::-webkit-scrollbar-thumb { background: var(--cor-accent); }
 a, button, .nav-button, .splash-button { cursor: var(--cursor-pointer) !important; }
+a { color: inherit; }
 
-.bg-fixed {
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
+.bg-fixed { background-size: cover; background-position: center center; background-attachment: fixed; }
 .page-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 40px 20px;
-    box-sizing: border-box;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 100vh; padding: 40px 20px; box-sizing: border-box;
+}
+
+.eyebrow {
+    font-family: 'Ticking', monospace;
+    letter-spacing: 3px;
+    font-size: 0.85em;
+    color: var(--cor-accent);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
 }
 
 /* ==============================================
-   ESTILOS DA CAPA (INDEX.HTML)
+   CAPA (INDEX.HTML)
    ============================================== */
-.splash-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-}
+.splash-container { display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh; }
 .diary-container {
-    position: relative;
-    width: 500px; /* Largura do seu PNG */
-    height: 700px; /* Altura do seu PNG */
-    background-image: url('assets/images/punk.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative; width: 500px; height: 700px;
+    background-image: url('assets/images/punk.png'); background-size: contain;
+    background-repeat: no-repeat; background-position: center;
 }
 .splash-content {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    background-color: rgba(168, 28, 28, 0.75);
-    padding: 20px;
-    border: 1px solid var(--cor-principal);
-    box-shadow: 0 0 20px var(--cor-sombra-brilho);
+    position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%;
+    background-color: rgba(58, 53, 46, 0.85);
+    padding: 24px; border: 1px solid var(--cor-cimento-claro);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    clip-path: polygon(0% 3%, 2% 0%, 98% 0%, 100% 4%, 100% 97%, 97% 100%, 3% 100%, 0% 96%);
     box-sizing: border-box;
 }
 .splash-content h1 {
-    font-family: 'SpookyPunk', sans-serif; color: #111; font-size: 3em; text-shadow: 2px 2px 0px #e6d9d9; margin: 0;
+    font-family: 'SAIBA-45', sans-serif; color: var(--cor-texto); font-size: 2.6em;
+    text-shadow: 2px 2px 0px #000; margin: 0; letter-spacing: 2px;
 }
-.splash-content p {
-    font-family: 'SpookyPunk', sans-serif; color: #111; font-size: 1.2em;
-}
-.splash-buttons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+.splash-content p { font-family: 'SpookyPunk', sans-serif; color: var(--cor-texto-dim); font-size: 1.1em; }
+.splash-buttons { margin-top: 40px; display: flex; justify-content: center; gap: 20px; }
 .splash-button {
-    font-family: 'SpookyPunk', sans-serif; text-decoration: none; background-color: var(--cor-principal); color: var(--cor-fundo); padding: 15px 25px; font-size: 1.5em; border: 2px solid #111; box-shadow: 4px 4px 0px #111; transition: all 0.1s ease-in-out;
+    font-family: 'SpookyPunk', sans-serif; text-decoration: none;
+    background-color: var(--cor-ferrugem); color: #0b0a08;
+    padding: 15px 25px; font-size: 1.4em; border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000; transition: all 0.1s ease-in-out;
 }
-.splash-button:hover {
-    transform: translate(2px, 2px); box-shadow: 2px 2px 0px #111;
-}
+.splash-button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
 
 /* ==============================================
-   ESTILOS DA PÁGINA "FUGIR"
+   FUGIR
    ============================================== */
 .fugir-container {
-    display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh; background-color: #000;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    width: 100%; height: 100vh; background-color: #000;
 }
-.fugir-container img {
-    max-width: 80%; max-height: 80vh;
-}
-.fugir-container a {
-    margin-top: 20px; font-family: 'SpookyPunk', sans-serif; font-size: 2em; color: #555; text-decoration: none;
-}
-.fugir-container a:hover {
-    color: #888;
+.fugir-container img { max-width: 70%; max-height: 70vh; filter: grayscale(60%) contrast(1.1); }
+.fugir-container a { margin-top: 24px; font-family: 'SpookyPunk', sans-serif; font-size: 1.8em; color: #555; text-decoration: none; }
+.fugir-container a:hover { color: #888; }
+.fugir-container p.motivo {
+    font-family: 'Ticking', monospace; color: #444; font-size: 0.9em; margin-top: 4px; letter-spacing: 1px;
 }
 
 /* ==============================================
-   CAIXA DE CONTEÚDO ESTILO TERMINAL (HOME.HTML E OUTROS)
+   CAIXA TERMINAL / ZINE (assinatura visual)
    ============================================== */
-.main-box-container {
-    position: relative; width: 90%; max-width: 800px; flex-shrink: 0;
-}
+.main-box-container { position: relative; width: 90%; max-width: 800px; flex-shrink: 0; }
 .main-box {
-    background-color: rgba(15, 10, 10, 0.9); box-shadow: 0 0 25px var(--cor-sombra-brilho), inset 0 0 15px rgba(0,0,0,0.7); border: 2px solid var(--cor-secundaria); position: relative; overflow: hidden; display: flex; flex-direction: column; min-height: 75vh; max-height: 85vh;
+    background-color: rgba(14, 12, 10, 0.93);
+    box-shadow: 0 0 30px rgba(0,0,0,0.7), inset 0 0 15px rgba(0,0,0,0.7);
+    border: 1px solid var(--cor-cimento-claro);
+    position: relative; overflow: hidden; display: flex; flex-direction: column;
+    min-height: 75vh; max-height: 88vh;
+    /* borda rasgada — a página parece colada, não desenhada */
+    clip-path: polygon(
+        0% 1.2%, 1.5% 0%, 40% 0.6%, 60% 0%, 98.5% 0.4%, 100% 2%,
+        100% 30%, 99.4% 31%, 100% 60%, 99.7% 61%, 100% 98%, 98.3% 100%,
+        60% 99.4%, 40% 100%, 2% 99.6%, 0% 98%,
+        0.5% 70%, 0% 69%, 0.4% 40%, 0% 39%
+    );
 }
 .main-box > * { position: relative; z-index: 2; }
-.box-header, .box-footer {
-    padding: 10px 20px; background-color: rgba(10, 5, 5, 0.7); flex-shrink: 0; font-family: 'SAIBA-45', sans-serif;
-}
-.box-header {
-    border-bottom: 1px solid var(--cor-secundaria); text-align: left; font-size: 1.2em; color: var(--cor-principal);
-}
-.box-body {
-    padding: 20px; flex-grow: 1; overflow-y: auto; position: relative;
-}
-.box-footer {
-    border-top: 1px solid var(--cor-secundaria); text-align: right; font-size: 1em; color: var(--cor-secundaria);
-}
+.box-header, .box-footer { padding: 12px 22px; background-color: rgba(9, 8, 6, 0.75); flex-shrink: 0; font-family: 'Ticking', monospace; }
+.box-header { border-bottom: 1px solid var(--cor-cimento); text-align: left; font-size: 1.1em; color: var(--cor-accent); letter-spacing: 1px; }
+.box-header h1 { font-family: 'SAIBA-45', sans-serif; font-size: 1.6em; margin: 4px 0 0 0; color: var(--cor-texto); letter-spacing: 1px; text-transform: none; }
+.box-body { padding: 24px; flex-grow: 1; overflow-y: auto; position: relative; }
+.box-footer { border-top: 1px solid var(--cor-cimento); text-align: right; font-size: 0.9em; color: var(--cor-texto-dim); }
+
 .fita-canto-se, .fita-canto-sd, .fita-canto-ie, .fita-canto-id {
-    position: absolute; width: 100px; height: 100px; background-image: url('assets/images/fita-tape.png'); background-size: cover; z-index: 11; opacity: 0.7; filter: sepia(100%) hue-rotate(330deg) saturate(4);
+    position: absolute; width: 90px; height: 90px; background-image: url('assets/images/fita-tape.png');
+    background-size: cover; z-index: 11; opacity: 0.55; filter: grayscale(40%) sepia(20%);
 }
-.fita-canto-se { top: -35px; left: -35px; transform: rotate(-45deg); }
-.fita-canto-sd { top: -35px; right: -35px; transform: rotate(45deg); }
-.fita-canto-ie { bottom: -35px; left: -35px; transform: rotate(45deg); }
-.fita-canto-id { bottom: -35px; right: -35px; transform: rotate(-45deg); }
+.fita-canto-se { top: -30px; left: -30px; transform: rotate(-45deg); }
+.fita-canto-sd { top: -30px; right: -30px; transform: rotate(45deg); }
+.fita-canto-ie { bottom: -30px; left: -30px; transform: rotate(45deg); }
+.fita-canto-id { bottom: -30px; right: -30px; transform: rotate(-45deg); }
 
-/* (Resto dos estilos de Navegação, Texto, etc. sem alterações) */
-.nav-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; padding: 15px 0; border-bottom: 1px solid var(--cor-secundaria); margin-bottom: 20px;
-}
-.nav-button {
-    background-color: transparent; color: var(--cor-principal); font-family: 'SAIBA-45', sans-serif; font-size: 1.8em; text-decoration: none; padding: 15px; border: 1px solid var(--cor-principal); transition: all 0.2s ease-in-out;
-}
-.nav-button:hover {
-    background-color: var(--cor-principal); color: var(--cor-fundo); box-shadow: 0 0 15px var(--cor-sombra-brilho);
-}
-.texto-principal {
-    font-size: 1.2em; line-height: 1.7; text-align: left; color: var(--cor-texto);
-}
-.texto-principal h1, .texto-principal h2 {
-    font-family: 'SAIBA-45', sans-serif; color: var(--cor-principal); text-align: center; font-size: 2.2em; text-shadow: 0 0 10px var(--cor-sombra-brilho);
-}
-.texto-principal a {
-    color: var(--cor-principal); font-weight: bold; text-decoration: none;
-}
-.texto-principal a:hover { text-decoration: underline; }
-.img-post { width: 100%; max-width: 500px; display: block; margin: 20px auto; border: 1px solid var(--cor-secundaria); }
-.mark-red { color: var(--cor-principal); font-weight: bold; }
-.mark-yellow { color: #ffee75; }
-.mark-blue { color: #82aaff; }
-.highlight-bg { background-color: var(--cor-secundaria); padding: 0 5px; }
-
-footer {
-    text-align: center; padding: 20px; font-family: 'SAIBA-45', sans-serif; font-size: 1.2em; color: #555; flex-shrink: 0;
-}
 /* ==============================================
-   NOVA CAMADA DE CARREGAMENTO (HOME.HTML)
+   NAVEGAÇÃO / GRID
    ============================================== */
-   #loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--cor-fundo);
-    background-image: url('assets/images/textura-ruido.png');
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; padding: 15px 0; border-bottom: 1px solid var(--cor-cimento); margin-bottom: 20px; }
+.nav-button {
+    background-color: transparent; color: var(--cor-accent); font-family: 'SAIBA-45', sans-serif;
+    font-size: 1.5em; text-decoration: none; padding: 13px; border: 1px solid var(--cor-accent);
+    transition: all 0.2s ease-in-out;
+}
+.nav-button:hover { background-color: var(--cor-accent); color: var(--cor-fundo); box-shadow: 0 0 15px var(--cor-accent-fraca); }
+
+/* núcleos temáticos — cards da index de lombras */
+.nucleos { display: flex; flex-direction: column; gap: 26px; text-align: left; margin-top: 10px; }
+.nucleo { border-left: 3px solid var(--cor-nucleo, var(--cor-accent)); padding-left: 18px; }
+.nucleo.n-sistema { --cor-nucleo: var(--cor-oxido); }
+.nucleo.n-ruina { --cor-nucleo: var(--cor-ferrugem); }
+.nucleo.n-ternura { --cor-nucleo: var(--cor-dourado); }
+.nucleo h2 { color: var(--cor-nucleo); font-family: 'SAIBA-45', sans-serif; text-align: left; margin: 0 0 4px 0; font-size: 1.7em; text-shadow: none; }
+.nucleo .descricao-nucleo { color: var(--cor-texto-dim); font-size: 0.95em; margin: 0 0 12px 0; font-style: italic; }
+.lista-poemas { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 0; margin: 0; list-style: none; }
+.lista-poemas a { display: inline-block; text-decoration: none; color: var(--cor-texto); padding: 4px 0; border-bottom: 1px dashed transparent; transition: all 0.15s; }
+.lista-poemas a:hover { color: var(--cor-nucleo); border-bottom: 1px dashed var(--cor-nucleo); }
+.lista-poemas a::before { content: "→ "; color: var(--cor-nucleo); }
+
+/* ==============================================
+   TEXTO / POEMA
+   ============================================== */
+.texto-principal { font-size: 1.15em; line-height: 1.75; text-align: left; color: var(--cor-texto); }
+.texto-principal h1, .texto-principal h2 { font-family: 'SAIBA-45', sans-serif; color: var(--cor-accent); text-align: center; font-size: 2em; text-shadow: 0 0 12px var(--cor-accent-fraca); }
+.texto-principal a { color: var(--cor-accent); font-weight: bold; text-decoration: none; }
+.texto-principal a:hover { text-decoration: underline; }
+.img-post { width: 100%; max-width: 480px; display: block; margin: 20px auto; border: 1px solid var(--cor-cimento); filter: grayscale(30%); }
+.mark-red { color: var(--cor-ferrugem); font-weight: bold; }
+.mark-yellow { color: #d9b65f; }
+.mark-blue { color: #7fa0a8; }
+.strong-word { color: var(--cor-accent); }
+.highlight-bg { background-color: var(--cor-cimento); padding: 0 5px; }
+.separador-blog, hr.separador-blog { border: none; border-top: 1px dashed var(--cor-cimento-claro); width: 55%; margin: 2.5em auto; opacity: 0.6; }
+
+/* leitor de áudio embutido, tema por núcleo */
+.audio-player-box {
+    background-color: var(--cor-fundo-alt); border: 1px solid var(--cor-nucleo, var(--cor-accent));
+    padding: 10px; margin-bottom: 20px; text-align: center;
+}
+.audio-player-box p { color: var(--cor-texto-dim) !important; margin: 0 0 6px 0; font-family: 'Ticking', monospace; font-size: 0.9em; }
+.audio-player-box audio { width: 100%; max-width: 300px; margin-top: 5px; }
+
+footer { text-align: center; padding: 20px; font-family: 'SAIBA-45', sans-serif; font-size: 1.1em; color: #4a453d; flex-shrink: 0; }
+
+/* ==============================================
+   CAMADA DE CARREGAMENTO (HOME.HTML)
+   ============================================== */
+#loading-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--cor-fundo); background-image: url('assets/images/textura-ruido.png');
+    z-index: 1000; display: flex; justify-content: center; align-items: center;
     transition: opacity 0.5s ease-out;
 }
-
-#loading-box {
-    text-align: center;
-    border: 2px solid var(--cor-secundaria);
-    padding: 40px 60px;
-    background-color: rgba(15, 10, 10, 0.9);
-    box-shadow: 0 0 25px var(--cor-sombra-brilho);
-}
-
-#loading-box h2 {
-    font-family: 'SAIBA-45', sans-serif;
-    color: var(--cor-principal);
-    font-size: 4em;
-    text-shadow: 0 0 10px var(--cor-sombra-brilho);
-    margin: 0 0 30px 0;
-}
-
-#loading-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* Reutilizando o estilo do botão da capa para consistência */
+#loading-box { text-align: center; border: 1px solid var(--cor-cimento-claro); padding: 40px 60px; background-color: rgba(14, 12, 10, 0.93); }
+#loading-box h2 { font-family: 'SAIBA-45', sans-serif; color: var(--cor-ferrugem); font-size: 3.4em; text-shadow: 0 0 10px var(--cor-accent-fraca); margin: 0 0 30px 0; }
+#loading-buttons { display: flex; justify-content: center; gap: 20px; }
 #start-button {
-    font-family: 'SpookyPunk', sans-serif;
-    text-decoration: none;
-    background-color: var(--cor-principal);
-    color: var(--cor-fundo);
-    padding: 15px 25px;
-    font-size: 1.5em;
-    border: 2px solid #111;
-    box-shadow: 4px 4px 0px #111;
-    transition: all 0.1s ease-in-out;
+    font-family: 'SpookyPunk', sans-serif; text-decoration: none; background-color: var(--cor-ferrugem);
+    color: #0b0a08; padding: 15px 25px; font-size: 1.4em; border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000; transition: all 0.1s ease-in-out;
+}
+#start-button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
+
+/* ==============================================
+   MECANISMO "PRENDER" — vinheta que aprofunda com o tempo
+   ativado via JS (classe .deep no body após permanência)
+   ============================================== */
+#vinheta-profundidade {
+    position: fixed; inset: 0; pointer-events: none; z-index: 500;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%);
+    opacity: 0; transition: opacity 4s ease-in-out;
+}
+body.deep #vinheta-profundidade { opacity: 1; }
+body.deep .box-header { animation: flicker-log 6s infinite; }
+@keyframes flicker-log { 0%, 96%, 100% { opacity: 1; } 97% { opacity: 0.75; } 98% { opacity: 1; } }
+
+@media (max-width: 600px) {
+    .diary-container { width: 92vw; height: 90vh; }
+    .box-header h1 { font-size: 1.25em; }
+    .texto-principal { font-size: 1.05em; }
 }
 
-#start-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #111;
-}
-/* bloco css */
-.separador-blog {
-    border: none; 
-    border-top: 2px solid #333333; 
-    width: 60%; 
-    margin: 3em auto; 
-    opacity: 0.5; 
+@media (prefers-reduced-motion: reduce) {
+    #vinheta-profundidade, body.deep .box-header { transition: none; animation: none; }
 }

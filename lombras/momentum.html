@@ -9,7 +9,8 @@
         body { background-image: url('../assets/images/lombr.png'), url('../assets/images/textura-ruido.png'); }
     </style>
 </head>
-<body class="bg-fixed">
+<body class="bg-fixed cat-sistema">
+    <div id="vinheta-profundidade"></div>
     <div class="page-container">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
@@ -17,11 +18,14 @@
             <div class="fita-canto-ie"></div>
             <div class="fita-canto-id"></div>
             <div class="main-box">
-                <header class="box-header"><h1>Momentum</h1></header>
+                <header class="box-header">
+                    <span class="eyebrow">CORPO // SISTEMA</span>
+                    <h1>Momentum</h1>
+                </header>
                 <main class="box-body">
-                    <nav class="nav-grid"><a href="./index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
+                    <nav class="nav-grid"><a href="index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
 
-                     <article class="texto-principal">
+                    <article class="texto-principal">
                         <p>o detalhe que não pede atenção,</p>
                         <p>clama em sua existência por beleza.</p>
                         <p>some em sua brevitude por perfeição.</p>
@@ -49,5 +53,13 @@
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        setTimeout(function () { document.body.classList.add('deep'); }, 20000);
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>

@@ -3,27 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procurando</title>
+    <title>Te vejo</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        body { 
-            background-image: url('../assets/images/principal-bg.png'), url('../assets/images/textura-ruido.png'); 
-        }
-        .audio-player-box {
-            background-color: #24b7d1; 
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px; 
-            text-align: center;
-        }
-        .audio-player-box audio {
-            width: 100%;
-            max-width: 300px;
-            margin-top: 5px;
-        }
+        body { background-image: url('../assets/images/principal-bg.png'), url('../assets/images/textura-ruido.png'); }
     </style>
 </head>
-<body class="bg-fixed">
+<body class="bg-fixed cat-ternura">
+    <div id="vinheta-profundidade"></div>
     <div class="page-container">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
@@ -32,20 +19,14 @@
             <div class="fita-canto-id"></div>
             <div class="main-box">
                 <header class="box-header">
+                    <span class="eyebrow">TERNURA // FÉ</span>
                     <h1>Te vejo</h1>
                 </header>
                 <main class="box-body">
-                    <nav class="nav-grid">
-                        <a href="./index.html" class="nav-button">
-                            <span>VOLTAR P/ LOMBRAS</span>
-                        </a>
-                    </nav>
-
+                    <nav class="nav-grid"><a href="index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
                     <div class="audio-player-box">
-                        <p style="color: rgb(2, 2, 2); margin-bottom: 5px;">Sole mío</p>
-                        <audio controls>
-                            <source src="../assets/audio/sole.mp3" type="audio/mpeg">
-                        </audio>
+                        <p>Sole mío</p>
+                        <audio controls><source src="../assets/audio/sole.mp3" type="audio/mpeg"></audio>
                     </div>
 
                     <article class="texto-principal">
@@ -80,9 +61,9 @@
                         <p>te vejo como a <span class="strong-word">ligadura de esperança</span></p>
                         <p>no coração de quem padece.</p>
                         <hr class="separador-blog">
-                        <p>seu amor não é institucionalizado,</p>nem deveria ser.</p>
+                        <p>seu amor não é institucionalizado, nem deveria ser.</p>
                         <p>seu amor é <span class="strong-word">transcendente</span> uma instituição qualquer.</p>
-                        <p>não te vejo em lugares suntuosos,</p> embora você possa <span class="strong-word">visitar</span></p>
+                        <p>não te vejo em lugares suntuosos, embora você possa <span class="strong-word">visitar</span></p>
                         <p>te vejo modesto, algo <span class="mark-red">inerente</span> ao <span class="strong-word">ser humano</span>.</p>
                         <hr class="separador-blog">
                         <p>o que <span class="strong-word">aglutina</span> todos os seres em um só, mas, ao mesmo tempo,</p>
@@ -111,12 +92,18 @@
                         <hr class="separador-blog">
                     </article>
                 </main>
-                <footer class="box-footer">
-                    <p>ENTRY:siladó.log</p>
-                </footer>
+                <footer class="box-footer"><p>ENTRY:siladó.log</p></footer>
             </div>
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        setTimeout(function () { document.body.classList.add('deep'); }, 20000);
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>

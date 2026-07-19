@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genômica</title>
     <link rel="stylesheet" href="../style.css">
-    <style>body { background-image: url('../assets/images/genomica.jpeg'), url('../assets/images/textura-ruido.png'); }</style>
+    <style>
+        body { background-image: url('../assets/images/genomica.jpeg'), url('../assets/images/textura-ruido.png'); }
+    </style>
 </head>
-<body class="bg-fixed">
-    <audio autoplay loop><source src="../assets/audio/brahms1.mp3" type="audio/mpeg"></audio>
+<body class="bg-fixed cat-sistema">
+    <div id="vinheta-profundidade"></div>
     <div class="page-container">
         <div class="main-box-container">
             <div class="fita-canto-se"></div>
@@ -16,9 +18,17 @@
             <div class="fita-canto-ie"></div>
             <div class="fita-canto-id"></div>
             <div class="main-box">
-                <header class="box-header"><h1>Genômica</h1></header>
+                <header class="box-header">
+                    <span class="eyebrow">CORPO // SISTEMA</span>
+                    <h1>Genômica</h1>
+                </header>
                 <main class="box-body">
-                    <nav class="nav-grid"><a href="./index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
+                    <nav class="nav-grid"><a href="index.html" class="nav-button"><span>VOLTAR P/ LOMBRAS</span></a></nav>
+                    <div class="audio-player-box">
+                        <p>Brahms — trilha de fundo</p>
+                        <audio controls><source src="../assets/audio/brahms1.mp3" type="audio/mpeg"></audio>
+                    </div>
+
                     <article class="texto-principal">
                         <p>Engraçado como a informação é o que nos torna vivos, me pergunto de onde vem essa informação. Não de uma maneira bioquimica, óbvio, eu entendo os processos de divisão celular, produção de células somáticas, reprodução e como essa informação é passada átraves das gerações.</p>
                         <p>O que eu não entendo é como tudo e todas as diferenças entre as diferentes formas de vida, são variações de 4 letras?</p>
@@ -33,5 +43,13 @@
         </div>
     </div>
     <footer>Jomaserver</footer>
+
+    <script>
+        setTimeout(function () { document.body.classList.add('deep'); }, 20000);
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>
